@@ -26,9 +26,9 @@ public class SeleniumMethodInvocationListener implements ITestListener {
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
 		File scrFile = ((TakesScreenshot)WebDriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
-		// Now you can do whatever you need to do with it, for example copy somewhere
+
 		try {
-			FileUtils.copyFile(scrFile, new File("c:\\tmp\\"+result.getTestName()+".png"));
+			FileUtils.copyFile(scrFile, new File("c:\\tmp\\"+result.getTestName()+".png")); //need to check for UNIX OS
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -39,9 +39,9 @@ public class SeleniumMethodInvocationListener implements ITestListener {
 	public void onTestFailure(ITestResult result) {
 		// TODO Auto-generated method stub
 		File scrFile = ((TakesScreenshot)WebDriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
-		// Now you can do whatever you need to do with it, for example copy somewhere
+
 		try {
-			FileUtils.copyFile(scrFile, new File("c:\\tmp\\"+result.getTestName()+".png"));
+			FileUtils.copyFile(scrFile, new File("c:\\tmp\\"+result.getTestName()+".png")); //need to check for UNIX OS
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
