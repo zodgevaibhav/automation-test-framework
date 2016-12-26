@@ -7,12 +7,12 @@ import java.io.InputStreamReader;
 public class AdbOperations {
 	
 	public static String installApplication(String strFullApkFileName){
-		return commandExecutor("adb install "+strFullApkFileName);
+		return commandExecutor("adb install "+"\""+strFullApkFileName+"\"");  //need to test this line of code on unix system once
 	}
 	
 	public static String unInstallApplication(String strPackageName){
-		return commandExecutor("adb uninstall "+strPackageName);
-	}	
+		return commandExecutor("adb uninstall "+"\""+strPackageName+"\""); //need to test this line of code on unix system once
+	}
 	
 	private static String commandExecutor(String strCommand){
 
